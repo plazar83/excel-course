@@ -3,7 +3,9 @@ const path = require('path')
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
-    entry: {
-
+    entry: './index.js',
+    output: {
+        filename: "",
+        path: path.resolve(__dirname, 'dist')
     }
 }
