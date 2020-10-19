@@ -1,3 +1,4 @@
-import "./module"
+import './styles/style.sass'
+import './module'
 
-console.log("workink!")
+console.log('working!')
