@@ -7,8 +7,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Excel js</title>
     <link rel="icon" href="favicon.ico" type="image/icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <div id="app" class="container"></div>
+    <div id="app">
+        <div class="db">
+            <div class="db__header">
+                <h1>Excel dashboard</h1>
+            </div>
+            <div class="db__new">
+                <div class="db__view">
+                    <a href="" class="db__create">Новая<br />таблица</a>
+                </div>
+            </div>
+            <div class="db__table db__view">
+                <div class="db__list-header">
+                    <span>Название</span>
+                    <span>Дата открытия</span>
+                </div>
+                <ul class="db__list">
+                    <li class="db__record">
+                        <a href="#">Таблица #1</a>
+                        <strong>07.01.21</strong>
+                    </li>
+                    <li class="db__record">
+                        <a href="#">Таблица #2</a>
+                        <strong>07.01.21</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
