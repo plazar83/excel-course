@@ -7,6 +7,8 @@
   },
   "extends": ["eslint:recommended", "google"],
   "rules": {
+    "linebreak-style": 0,
+    "operator-linebreak": "off",
     "semi": "off",
     "no-unused-vars": "warn",
     "comma-dangle": "off",
