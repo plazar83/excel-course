@@ -4,10 +4,16 @@ const CODES = {
 }
 
 function createRow(index, content) {
+  const resizer = index
+    ? `<div class="row-resize" data-resize="row" data-row-id="${index}"></div>`
+    : ''
   return `
-    <div class="row">
-        <div class="row-info">${index ? index : ''}</div>
-        <div class="row-data">${content}</div>
+    <div class="row" data-type="resizeble">
+      <div class="row-info">
+         ${index ? index : ''}
+         ${resizer}
+      </div>
+      <div class="row-data">${content}</div>
     </div>
   `
 }
@@ -17,7 +23,13 @@ function createCol(countCols) {
   for (let i = 0; i <= countCols; i++) {
     cols.push(toChar(i))
   }
-  return cols.map(col => `<div class="column">${col}</div>`).join('')
+  return cols.map((col, index) => {
+    return `
+    <div class="column" data-type="resizeble" data-col="${index}">
+      ${col}
+      <div class="col-resize" data-resize="col"></div>
+    </div>`
+  }).join('')
 }
 
 function createCell(countCols) {
@@ -25,8 +37,9 @@ function createCell(countCols) {
   for (let i = 0; i <= countCols; i++) {
     cols.push(toChar(i))
   }
-  return cols.map(col => `<div class="cell" contenteditable>${col}</div>`)
-      .join('')
+  return cols.map((col, index) => {
+    return `<div class="cell" data-cell="${index}" contenteditable>${col}</div>`
+  }).join('')
 }
 function toChar(index) {
   return String.fromCharCode(CODES.A + index)

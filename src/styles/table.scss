@@ -17,6 +17,7 @@
   }
 
   .row-info {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,6 +43,7 @@
     background: #f8f9fa;
     border-top: 0;
     border-left: 0;
+    position: relative;
   }
 
   .cell {
@@ -58,8 +60,48 @@
 
     &.selected {
       border: 0;
-      outline: 2px solid #1a73e8;
+      outline: 2px solid $primary-color;
       z-index: 0;
+    }
+  }
+  .col-resize, .row-resize {
+    position: absolute;
+    background: $primary-color;
+    opacity: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .resize {
+    .col-resize, .row-resize {
+      opacity: 1;
+    }
+    .col-resize {
+      bottom: -5000px;
+    }
+    .row-resize {
+      right: -5000px
+    }
+  }
+
+
+  .col-resize {
+    top: 0;
+    width: 4px;
+    &:hover {
+      cursor: col-resize;
+    }
+  }
+
+  .row-resize {
+    left: 0;
+    height: 4px;
+    &:hover {
+      cursor: row-resize;
     }
   }
 }
